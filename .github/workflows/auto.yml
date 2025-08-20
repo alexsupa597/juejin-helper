@@ -37,7 +37,7 @@ jobs:
           timeout_seconds: 30
           max_attempts: 2
           retry_on: error
-          command: cd workflows && yarn && yarn checkin
+          command: cd workflows && yarn && yarn checkin 
 
 #  SeaGold:
 #    needs: CheckIn
