@@ -31,12 +31,13 @@ jobs:
           cd workflows
           yarn
           yarn checkin
-      - uses: nick-fields/retry@v3
+      - if: failure()
+        uses: nick-fields/retry@v3
         with:
           timeout_seconds: 30
           max_attempts: 2
           retry_on: error
-          command: yarn checkin
+          command: cd workflows && yarn && yarn checkin
 
 #  SeaGold:
 #    needs: CheckIn
